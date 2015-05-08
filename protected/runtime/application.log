@@ -1392,3 +1392,135 @@ Stack trace:
 REQUEST_URI=/index.php?r=client/create
 HTTP_REFERER=http://www.test.ru/index.php?r=client/create
 ---
+2015/05/08 17:05:29 [error] [exception.CException] exception 'CException' with message 'В классе Contract и его поведениях не найден метод или замыкание с именем "getData".' in /home/pavel/work/test/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): CActiveRecord->__call('getData', Array)
+#2 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): Contract->getData()
+#3 /home/pavel/work/test/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#4 /home/pavel/work/test/framework/web/CBaseController.php(147): CGridView->init()
+#5 /home/pavel/work/test/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 /home/pavel/work/test/protected/views/contract/view.php(70): CBaseController->widget('zii.widgets.gri...', Array)
+#7 /home/pavel/work/test/framework/web/CBaseController.php(126): require('/home/pavel/wor...')
+#8 /home/pavel/work/test/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/pavel/wor...', Array, true)
+#9 /home/pavel/work/test/framework/web/CController.php(869): CBaseController->renderFile('/home/pavel/wor...', Array, true)
+#10 /home/pavel/work/test/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#11 /home/pavel/work/test/protected/controllers/ContractController.php(56): CController->render('view', Array)
+#12 [internal function]: ContractController->actionView('9')
+#13 /home/pavel/work/test/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ContractController), Array)
+#14 /home/pavel/work/test/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ContractController), Object(ReflectionMethod), Array)
+#15 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('view')
+#24 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/view')
+#25 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#26 /home/pavel/work/test/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php?r=contract/view&id=9
+HTTP_REFERER=http://test.ru/index.php?r=contract/create
+---
+2015/05/08 17:06:31 [error] [exception.CException] exception 'CException' with message 'В классе Contract и его поведениях не найден метод или замыкание с именем "getData".' in /home/pavel/work/test/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): CActiveRecord->__call('getData', Array)
+#2 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): Contract->getData()
+#3 /home/pavel/work/test/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#4 /home/pavel/work/test/framework/web/CBaseController.php(147): CGridView->init()
+#5 /home/pavel/work/test/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 /home/pavel/work/test/protected/views/contract/view.php(70): CBaseController->widget('zii.widgets.gri...', Array)
+#7 /home/pavel/work/test/framework/web/CBaseController.php(126): require('/home/pavel/wor...')
+#8 /home/pavel/work/test/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/pavel/wor...', Array, true)
+#9 /home/pavel/work/test/framework/web/CController.php(869): CBaseController->renderFile('/home/pavel/wor...', Array, true)
+#10 /home/pavel/work/test/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#11 /home/pavel/work/test/protected/controllers/ContractController.php(56): CController->render('view', Array)
+#12 [internal function]: ContractController->actionView('9')
+#13 /home/pavel/work/test/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ContractController), Array)
+#14 /home/pavel/work/test/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ContractController), Object(ReflectionMethod), Array)
+#15 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('view')
+#24 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/view')
+#25 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#26 /home/pavel/work/test/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php?r=contract/view&id=9
+HTTP_REFERER=http://test.ru/index.php?r=contract/create
+---
+2015/05/08 17:06:44 [error] [exception.CException] exception 'CException' with message 'В классе Contract и его поведениях не найден метод или замыкание с именем "getData".' in /home/pavel/work/test/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): CActiveRecord->__call('getData', Array)
+#2 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): Contract->getData()
+#3 /home/pavel/work/test/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#4 /home/pavel/work/test/framework/web/CBaseController.php(147): CGridView->init()
+#5 /home/pavel/work/test/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 /home/pavel/work/test/protected/views/contract/view.php(70): CBaseController->widget('zii.widgets.gri...', Array)
+#7 /home/pavel/work/test/framework/web/CBaseController.php(126): require('/home/pavel/wor...')
+#8 /home/pavel/work/test/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/pavel/wor...', Array, true)
+#9 /home/pavel/work/test/framework/web/CController.php(869): CBaseController->renderFile('/home/pavel/wor...', Array, true)
+#10 /home/pavel/work/test/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#11 /home/pavel/work/test/protected/controllers/ContractController.php(56): CController->render('view', Array)
+#12 [internal function]: ContractController->actionView('9')
+#13 /home/pavel/work/test/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ContractController), Array)
+#14 /home/pavel/work/test/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ContractController), Object(ReflectionMethod), Array)
+#15 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('view')
+#24 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/view')
+#25 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#26 /home/pavel/work/test/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php?r=contract/view&id=9
+HTTP_REFERER=http://test.ru/index.php?r=contract/create
+---
+2015/05/08 17:08:30 [error] [exception.CException] exception 'CException' with message 'В классе Contract и его поведениях не найден метод или замыкание с именем "getData".' in /home/pavel/work/test/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): CActiveRecord->__call('getData', Array)
+#2 /home/pavel/work/test/framework/zii/widgets/CBaseListView.php(125): Contract->getData()
+#3 /home/pavel/work/test/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#4 /home/pavel/work/test/framework/web/CBaseController.php(147): CGridView->init()
+#5 /home/pavel/work/test/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 /home/pavel/work/test/protected/views/contract/view.php(70): CBaseController->widget('zii.widgets.gri...', Array)
+#7 /home/pavel/work/test/framework/web/CBaseController.php(126): require('/home/pavel/wor...')
+#8 /home/pavel/work/test/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/pavel/wor...', Array, true)
+#9 /home/pavel/work/test/framework/web/CController.php(869): CBaseController->renderFile('/home/pavel/wor...', Array, true)
+#10 /home/pavel/work/test/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#11 /home/pavel/work/test/protected/controllers/ContractController.php(57): CController->render('view', Array)
+#12 [internal function]: ContractController->actionView('9')
+#13 /home/pavel/work/test/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ContractController), Array)
+#14 /home/pavel/work/test/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ContractController), Object(ReflectionMethod), Array)
+#15 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('view')
+#24 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/view')
+#25 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#26 /home/pavel/work/test/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php?r=contract/view&id=9
+HTTP_REFERER=http://test.ru/index.php?r=contract/create
+---
