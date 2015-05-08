@@ -1,0 +1,60 @@
+/* variables */
+/* mixins */
+/* markup */
+.container {
+  min-width: 1000px;
+}
+i {
+  position: relative;
+  bottom: -4px;
+}
+/* navbar */
+.navbar a i {
+  position: relative;
+  bottom: -3px;
+}
+/* / navbar */
+/* filters */
+.services-select {
+  width: 100%;
+}
+.ms-parent input[type=checkbox] {
+  margin: 0;
+}
+.form-control[readonly] {
+  cursor: pointer;
+}
+/* / filters */
+/* table */
+.project-progress {
+  font-size: 16px;
+}
+.project-progress.progress-1 {
+  color: #ff0000;
+}
+.project-progress.progress-2 {
+  color: #ffd54b;
+}
+.project-progress.progress-3 {
+  color: #ffd54b;
+}
+.project-progress.progress-4 {
+  color: #ffd54b;
+}
+.project-progress.progress-5 {
+  color: green;
+}
+/* / table */
+/* add form wrapper */
+.add-form-wrapper input[type=text],
+.add-form-wrapper input[type=tel],
+.add-form-wrapper input[type=email] {
+  margin: 0 0 10px 0;
+}
+/* add form wrapper */
+.grid-view {
+	padding: 0 !important;
+}
+.summary {
+	display: none;
+}

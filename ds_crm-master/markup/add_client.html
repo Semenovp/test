@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CRM дома сайтов</title>
+
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
+	<link href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+	<link href="bower_components/pickadate/lib/compressed/themes/classic.css" rel="stylesheet">
+	<link href="bower_components/pickadate/lib/compressed/themes/classic.date.css" rel="stylesheet">
+	<link href="bower_components/multiple-select/multiple-select.css" rel="stylesheet">
+
+	<link href="css/style.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+
+<div class="navbar navbar-material-orange-700">
+	<div class="container">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"><i class="mdi-action-home"></i> Дом Сайтов CRM</a>
+		</div>
+
+		<div class="navbar-collapse collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="clients.html">Клиенты</a></li>
+				<li class="active"><a href="javascript:void(0)">Заявки</a></li>
+
+				<li class="dropdown">
+					<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Добавить<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="add_client.html"><i class="mdi-action-assignment-ind"></i> Клиента</a></li>
+						<li><a href="add_contract.html"><i class="mdi-action-assignment"></i> Заявку</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<!--<li><a href="javascript:void(0)">Войти</a></li>-->
+				<!--<li><a href="javascript:void(0)">Зарегистрироваться</a></li>-->
+				<li class="dropdown">
+					<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Евгений Тасканов<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0)"><i class="mdi-action-face-unlock"></i> Профиль</a></li>
+						<li><a href="javascript:void(0)"><i class="mdi-action-exit-to-app"></i> Выйти</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row add-form-wrapper">
+		<div class="col-xs-12">
+
+			<div class="panel panel-primary panel-material-light-blue-600">
+				<div class="panel-heading">
+					<h3 class="panel-title">Добавление клиента</h3>
+				</div>
+
+				<div class="panel-body">
+					<form action="/">
+
+						<div class="col-xs-3">
+
+							<fieldset class="form-group">
+								<div class="form-control-wrapper">
+									<input type="text" class="form-control empty">
+									<div class="floating-label">
+										Фамилия
+									</div>
+									<span class="material-input"></span>
+								</div>
+
+								<div class="form-control-wrapper">
+									<input type="text" class="form-control empty">
+									<div class="floating-label">
+										Имя
+									</div>
+									<span class="material-input"></span>
+								</div>
+
+								<div class="form-control-wrapper">
+									<input type="text" class="form-control empty">
+									<div class="floating-label">
+										Отчество
+									</div>
+									<span class="material-input"></span>
+								</div>
+							</fieldset>
+
+						</div>
+
+						<div class="col-xs-3">
+
+							<fieldset class="form-group">
+								<div class="form-control-wrapper">
+									<input type="tel" class="form-control empty">
+									<div class="floating-label">
+										Телефон
+									</div>
+									<span class="material-input"></span>
+								</div>
+
+								<div class="form-control-wrapper">
+									<input type="email" class="form-control empty">
+									<div class="floating-label">
+										Email
+									</div>
+									<span class="material-input"></span>
+								</div>
+
+								<div class="form-control-wrapper">
+									<input type="text" class="form-control empty">
+									<div class="floating-label">
+										Компания
+									</div>
+									<span class="material-input"></span>
+								</div>
+							</fieldset>
+
+						</div>
+
+						<div class="col-xs-3">
+							<fieldset class="form-group">
+								<label for="">Статус</label><br/>
+								<select class="form-control">
+									<option value="1" selected>Активный</option>
+									<option value="2">Архивный</option>
+								</select>
+							</fieldset>
+						</div>
+
+						<div class="col-xs-3">
+							<fieldset class="form-group">
+								<label for="">Примечание</label>
+								<textarea class="form-control" name="" id="" cols="30" rows="3"></textarea>
+							</fieldset>
+						</div>
+
+						<div class="col-xs-12 text-right">
+							<button type="submit" class="btn btn-default btn-raised">Отменить<div class="ripple-wrapper"></div></button>
+							<button type="submit" class="btn btn-primary btn-raised">Добавить<div class="ripple-wrapper"></div></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+<script src="bower_components/pickadate/lib/compressed/picker.js"></script>
+<script src="bower_components/pickadate/lib/compressed/picker.date.js"></script>
+<script src="bower_components/pickadate/lib/translations/ru_RU.js"></script>
+<script src="bower_components/multiple-select/jquery.multiple.select.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

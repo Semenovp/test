@@ -1,0 +1,42 @@
+<?php
+	abstract class AUser {
+		abstract function getInfo();
+
+	}
+	class User extends AUser {
+		public $name;
+		public $login;
+		public $password;
+		public function __construct($n,$l,$p) {
+			$this->name = $n;
+			$this->login = $l;
+			$this->password =$p;
+		}
+		public function showInfo() {
+			echo "Name is $this->name<br>";
+			echo "Lign is $this->login<br>";
+			echo "Pass is $this->password<br>";
+		}
+		function getinfo(){
+			$this->name = 'PavelAbstract';
+		}
+		public function __destruct() {
+			echo "<br>User $this->name was deleted";
+		}
+	}
+	class SuperUser extends User {
+		public $role;
+		public function __construct($n,$l,$p,$r) {
+			parent::__construct($n,$l,$p);
+			$this->role = $r;
+		}
+		public function showInfo() {
+			parent::showInfo();
+			echo " Role is $this->role";
+		}
+	}
+	$user = new User('Pavel', 'MyLogin','123456');
+	$user->getInfo();
+	$user->showInfo();
+	$userAdmin = new SuperUser('Administrator', 'admin','1234', 'SuperU');
+	$userAdmin->showInfo();
