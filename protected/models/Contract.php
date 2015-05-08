@@ -114,12 +114,7 @@ class Contract extends CActiveRecord
 			$this->date = time();
 		return parent::BeforeSave();
 	}
-	public static function progress($prog){
-		switch($prog) {
-			case 1 : return "•";break;
-			case 2 : return "••";break;
-			case 3 : return "•••";break;
-			case 4 : return "••••";break;
-		}
+	public static function progress($prog){//
+		return str_repeat("•", $prog);
 	}
 }
