@@ -43,7 +43,8 @@
 			),
 			array(
 				'name' => 'progress',
-				'value' => 'Contract::progress($data->progress)'
+				'value' => 'Contract::progress($data->progress)',
+				'htmlOptions' => array('class' => 'project-progress progress')
 			),
 			array(
 				'name' => 'services',

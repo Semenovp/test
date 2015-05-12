@@ -115,6 +115,6 @@ class Contract extends CActiveRecord
 		return parent::BeforeSave();
 	}
 	public static function progress($prog){//
-		return str_repeat("•", $prog);
+		return str_repeat("• ", $prog);
 	}
 }
