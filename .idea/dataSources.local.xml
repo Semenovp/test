@@ -4,5 +4,8 @@
     <data-source name="SQLite -" uuid="74f4ce20-0261-42bb-a2fc-5a6c74af3e98">
       <secret-storage>master_key</secret-storage>
     </data-source>
+    <data-source name="SQLite - [2]" uuid="4ea8e6ed-8d86-41b4-8225-9c97bcaa7bc1">
+      <secret-storage>master_key</secret-storage>
+    </data-source>
   </component>
 </project>
