@@ -195,7 +195,10 @@ class Post extends CActiveRecord
 			'criteria'=>$criteria,
 			'sort'=>array(
 				'defaultOrder'=>'status, update_time DESC',
+
 			),
+			'pagination'=>array(
+				'pageSize'=>'1'),
 		));
 	}
 }

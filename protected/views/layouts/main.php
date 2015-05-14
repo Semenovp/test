@@ -58,7 +58,7 @@
 				<!--<li><a href="javascript:void(0)">Войти</a></li>-->
 				<!--<li><a href="javascript:void(0)">Зарегистрироваться</a></li>-->
 				<li class="dropdown">
-					<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Евгений Тасканов<b class="caret"></b></a>
+					<a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo Yii::app()->user->name;?></b></a>
 
 				</li>
 			</ul>
