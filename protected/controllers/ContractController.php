@@ -123,8 +123,13 @@ class ContractController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Contract');
+		$model=new Contract('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Contract']))
+			$model->attributes=$_GET['Contract'];
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'model'=>$model
 		));
 	}
 

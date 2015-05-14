@@ -18,16 +18,21 @@
 //	'dataProvider'=>$dataProvider,
 //	'itemView'=>'_view',
 //)); ?>
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
+<div class="panel panel-primary panel-material-light-blue-600">
+	<div class="panel-heading">
+		<h3 class="panel-title">Фильтр</h3>
+	</div>
+	<?php $this->renderPartial('_search',array(
+		'model'=>$model,
+	)); ?>
+</div><!-- search-form -->
 <div class="panel panel-primary panel-material-light-blue-600">
 	<div class="panel-heading">
 		<h3 class="panel-title">Заявки</h3>
 	</div>
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'client-grid',
-		'dataProvider'=>$dataProvider,
+		'dataProvider'=>$model->search(),
 		'itemsCssClass' => 'table table-striped table-hover',
 		'rowCssClass' => array('active', 'active'),
 		'columns'=>array(

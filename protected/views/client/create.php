@@ -2,15 +2,6 @@
 /* @var $this ClientController */
 /* @var $model Client */
 
-$this->breadcrumbs=array(
-	'Clients'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'List Client', 'url'=>array('index')),
-	array('label'=>'Manage Client', 'url'=>array('admin')),
-);
 ?>
 	<div class="row add-form-wrapper">
 		<div class="col-xs-12">

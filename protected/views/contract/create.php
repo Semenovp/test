@@ -2,10 +2,7 @@
 /* @var $this ContractController */
 /* @var $model Contract */
 
-$this->breadcrumbs=array(
-	'Contracts'=>array('index'),
-	'Create',
-);
+
 
 ?>
 	<div class="row add-form-wrapper">

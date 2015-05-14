@@ -122,9 +122,12 @@ class ClientController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Client('search');
-		$model->unsetAttributes();
 		$dataProvider=new CActiveDataProvider('Client');
+		$model=new Client('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Client']))
+			$model->attributes=$_GET['Client'];
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 			'model'=>$model
