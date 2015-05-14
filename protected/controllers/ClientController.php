@@ -32,7 +32,7 @@ class ClientController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update','filter'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -122,9 +122,12 @@ class ClientController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$model=new Client('search');
+		$model->unsetAttributes();
 		$dataProvider=new CActiveDataProvider('Client');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'model'=>$model
 		));
 	}
 
@@ -139,6 +142,16 @@ class ClientController extends Controller
 			$model->attributes=$_GET['Client'];
 
 		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+	public function actionFilter(){
+		$model=new Client('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Client']))
+			$model->attributes=$_GET['Client'];
+
+		$this->render('filter',array(
 			'model'=>$model,
 		));
 	}

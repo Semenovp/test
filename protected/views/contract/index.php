@@ -18,6 +18,9 @@
 //	'dataProvider'=>$dataProvider,
 //	'itemView'=>'_view',
 //)); ?>
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
 <div class="panel panel-primary panel-material-light-blue-600">
 	<div class="panel-heading">
 		<h3 class="panel-title">Заявки</h3>
