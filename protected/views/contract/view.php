@@ -17,7 +17,7 @@
 //?>
 
 <!--<h1>View Contract #--><?php //echo $model->id; ?><!--</h1>-->
-<div class="alert alert-success" role="alert">Заявка успешно добавлена</div>
+<div class="alert alert-success" role="alert">Успешно</div>
 <div class="panel panel-primary panel-material-light-blue-600">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

@@ -1524,118 +1524,105 @@ Stack trace:
 REQUEST_URI=/index.php?r=contract/view&id=9
 HTTP_REFERER=http://test.ru/index.php?r=contract/create
 ---
-2015/05/13 11:12:06 [error] [php] include(User.php): failed to open stream: No such file or directory (/home/pavel/work/test/framework/YiiBase.php:432)
+2015/05/14 21:44:30 [error] [exception.CDbException] exception 'CDbException' with message 'Таблица "{{user}}", упомянутая в записи active record класса "User", не найдена в базе данных.' in /home/pavel/work/test/framework/db/ar/CActiveRecord.php:2385
 Stack trace:
-#0 /home/pavel/work/test/protected/components/UserIdentity.php(15): spl_autoload_call()
-#1 /home/pavel/work/test/protected/models/LoginForm.php(50): UserIdentity->authenticate()
-#2 /home/pavel/work/test/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
-#3 /home/pavel/work/test/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
-#4 /home/pavel/work/test/framework/base/CModel.php(159): CInlineValidator->validate()
-#5 /home/pavel/work/test/protected/controllers/SiteController.php(94): LoginForm->validate()
-#6 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
-#7 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams()
-#8 /home/pavel/work/test/framework/web/CController.php(286): SiteController->runAction()
-#9 /home/pavel/work/test/framework/web/CController.php(265): SiteController->runActionWithFilters()
-#10 /home/pavel/work/test/framework/web/CWebApplication.php(282): SiteController->run()
-#11 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController()
-#12 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
-#13 /home/pavel/work/test/index.php(13): CWebApplication->run()
+#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(User))
+#1 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(661): CActiveRecord->getMetaData()
+#2 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(1355): CActiveRecord->getTableSchema()
+#3 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#4 /home/pavel/work/test/protected/components/UserIdentity.php(15): CActiveRecord->find('LOWER(username)...', Array)
+#5 /home/pavel/work/test/protected/models/LoginForm.php(50): UserIdentity->authenticate()
+#6 /home/pavel/work/test/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#7 /home/pavel/work/test/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#8 /home/pavel/work/test/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#9 /home/pavel/work/test/protected/controllers/SiteController.php(94): CModel->validate()
+#10 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /home/pavel/work/test/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /home/pavel/work/test/index.php(13): CApplication->run()
+#18 {main}
 REQUEST_URI=/index.php/site/login
-in /home/pavel/work/test/protected/components/UserIdentity.php (15)
-in /home/pavel/work/test/protected/models/LoginForm.php (50)
-in /home/pavel/work/test/protected/controllers/SiteController.php (94)
-2015/05/13 11:25:40 [error] [exception.CException] exception 'CException' with message 'В классе User и его поведениях не найден метод или замыкание с именем "validatePassword".' in /home/pavel/work/test/framework/base/CComponent.php:266
-Stack trace:
-#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
-#1 /home/pavel/work/test/protected/components/UserIdentity.php(18): CActiveRecord->__call('validatePasswor...', Array)
-#2 /home/pavel/work/test/protected/components/UserIdentity.php(18): User->validatePassword('demo')
-#3 /home/pavel/work/test/protected/models/LoginForm.php(50): UserIdentity->authenticate()
-#4 /home/pavel/work/test/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#5 /home/pavel/work/test/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#6 /home/pavel/work/test/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#7 /home/pavel/work/test/protected/controllers/SiteController.php(94): CModel->validate()
-#8 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
-#9 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#10 /home/pavel/work/test/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
-#11 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('login')
-#13 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
-#14 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
-#15 /home/pavel/work/test/index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/index.php/site/login
-HTTP_REFERER=http://test.ru/index.php/site/login
+HTTP_REFERER=http://www.test.ru/index.php/site/login
 ---
-2015/05/13 11:26:10 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT * FROM 'tbl_user' 't' WHERE LOWER(username)=? LIMIT 1
-in /home/pavel/work/test/protected/components/UserIdentity.php (15)
-in /home/pavel/work/test/protected/models/LoginForm.php (50)
-in /home/pavel/work/test/protected/controllers/SiteController.php (94)
-2015/05/13 11:26:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось подготовить SQL-запрос: SQLSTATE[HY000]: General error: 1 no such column: username' in /home/pavel/work/test/framework/db/CDbCommand.php:218
+2015/05/14 21:47:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in /home/pavel/work/test/framework/web/auth/CAccessControlFilter.php:182
 Stack trace:
-#0 /home/pavel/work/test/framework/db/CDbCommand.php(273): CDbCommand->prepare()
-#1 /home/pavel/work/test/framework/db/schema/CDbCommandBuilder.php(560): CDbCommand->bindValue(1, 'demo')
-#2 /home/pavel/work/test/framework/db/schema/CDbCommandBuilder.php(100): CDbCommandBuilder->bindValues(Object(CDbCommand), Array)
-#3 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(1355): CDbCommandBuilder->createFindCommand(Object(CDbTableSchema), Object(CDbCriteria))
-#4 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
-#5 /home/pavel/work/test/protected/components/UserIdentity.php(15): CActiveRecord->find('LOWER(username)...', Array)
-#6 /home/pavel/work/test/protected/models/LoginForm.php(50): UserIdentity->authenticate()
-#7 /home/pavel/work/test/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#8 /home/pavel/work/test/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#9 /home/pavel/work/test/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#10 /home/pavel/work/test/protected/controllers/SiteController.php(94): CModel->validate()
-#11 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
-#12 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#13 /home/pavel/work/test/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#0 /home/pavel/work/test/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 /home/pavel/work/test/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/admin')
+#9 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/pavel/work/test/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/contract/admin
+HTTP_REFERER=http://www.test.ru/index.php/site/login
+---
+2015/05/14 21:47:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in /home/pavel/work/test/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home/pavel/work/test/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 /home/pavel/work/test/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/admin')
+#9 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/pavel/work/test/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/contract/admin
+---
+2015/05/14 21:55:21 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 8 attempt to write a readonly database. Выполнявшийся SQL-запрос: UPDATE 'tbl_contract' SET "id"=:yp0, "client_id"=:yp1, "date"=:yp2, "status"=:yp3, "progress"=:yp4, "services"=:yp5, "price"=:yp6 WHERE 'tbl_contract'."id"=5.
+in /home/pavel/work/test/protected/controllers/ContractController.php (97)
+in /home/pavel/work/test/index.php (13)
+2015/05/14 21:55:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database. The SQL statement executed was: UPDATE 'tbl_contract' SET "id"=:yp0, "client_id"=:yp1, "date"=:yp2, "status"=:yp3, "progress"=:yp4, "services"=:yp5, "price"=:yp6 WHERE 'tbl_contract'."id"=5' in /home/pavel/work/test/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(1753): CDbCommand->execute()
+#1 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(1127): CActiveRecord->updateByPk('5', Array)
+#2 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(809): CActiveRecord->update(NULL)
+#3 /home/pavel/work/test/protected/controllers/ContractController.php(97): CActiveRecord->save()
+#4 [internal function]: ContractController->actionUpdate('5')
+#5 /home/pavel/work/test/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ContractController), Array)
+#6 /home/pavel/work/test/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ContractController), Object(ReflectionMethod), Array)
+#7 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
 #14 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#15 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('login')
-#16 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('update')
+#16 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('contract/update')
 #17 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
 #18 /home/pavel/work/test/index.php(13): CApplication->run()
 #19 {main}
-REQUEST_URI=/index.php/site/login
-HTTP_REFERER=http://test.ru/index.php/site/login
+REQUEST_URI=/index.php/contract/update/5
+HTTP_REFERER=http://www.test.ru/index.php/contract/update/5
 ---
-2015/05/13 11:28:18 [error] [exception.CException] exception 'CException' with message 'В классе User и его поведениях не найден метод или замыкание с именем "validatePassword".' in /home/pavel/work/test/framework/base/CComponent.php:266
+2015/05/14 21:56:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in /home/pavel/work/test/framework/web/auth/CAccessControlFilter.php:182
 Stack trace:
-#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
-#1 /home/pavel/work/test/protected/components/UserIdentity.php(18): CActiveRecord->__call('validatePasswor...', Array)
-#2 /home/pavel/work/test/protected/components/UserIdentity.php(18): User->validatePassword('demo')
-#3 /home/pavel/work/test/protected/models/LoginForm.php(50): UserIdentity->authenticate()
-#4 /home/pavel/work/test/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#5 /home/pavel/work/test/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#6 /home/pavel/work/test/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#7 /home/pavel/work/test/protected/controllers/SiteController.php(94): CModel->validate()
-#8 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
-#9 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#10 /home/pavel/work/test/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
-#11 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('login')
-#13 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
-#14 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
-#15 /home/pavel/work/test/index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/index.php/site/login
-HTTP_REFERER=http://test.ru/index.php/site/login
----
-2015/05/13 11:29:23 [error] [exception.CException] exception 'CException' with message 'В классе User и его поведениях не найден метод или замыкание с именем "validatePassword".' in /home/pavel/work/test/framework/base/CComponent.php:266
-Stack trace:
-#0 /home/pavel/work/test/framework/db/ar/CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
-#1 /home/pavel/work/test/protected/components/UserIdentity.php(18): CActiveRecord->__call('validatePasswor...', Array)
-#2 /home/pavel/work/test/protected/components/UserIdentity.php(18): User->validatePassword('demo')
-#3 /home/pavel/work/test/protected/models/LoginForm.php(50): UserIdentity->authenticate()
-#4 /home/pavel/work/test/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#5 /home/pavel/work/test/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#6 /home/pavel/work/test/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#7 /home/pavel/work/test/protected/controllers/SiteController.php(94): CModel->validate()
-#8 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
-#9 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#10 /home/pavel/work/test/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
-#11 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('login')
-#13 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
-#14 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
-#15 /home/pavel/work/test/index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/index.php/site/login
-HTTP_REFERER=http://test.ru/index.php/site/login
+#0 /home/pavel/work/test/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 /home/pavel/work/test/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/pavel/work/test/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/pavel/work/test/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('client/delete')
+#9 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /home/pavel/work/test/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/client/delete/6
+HTTP_REFERER=http://www.test.ru/index.php/client/index
 ---
