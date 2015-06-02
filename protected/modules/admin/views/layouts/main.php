@@ -48,8 +48,8 @@
 									    'linkOptions' => array('data-target' => '#','class' => 'dropdown-toggle','data-toggle' => 'dropdown'),
 									    'submenuOptions' => array('class' => 'dropdown-menu',),
 										'items' => array(
-											array('label'=>'Клиента', 'url'=>array('/client/create',)),
-											array('label'=>'Заявку', 'url'=>array('/contract/create',)),
+											array('label'=>'Пользователя', 'url'=>array('/admin/user/create',)),
+//											array('label'=>'Заявку', 'url'=>array('/contract/create',)),
 
 										)
 								)

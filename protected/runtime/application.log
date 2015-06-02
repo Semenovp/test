@@ -1906,3 +1906,23 @@ REQUEST_URI=/index.php/contract/index
 in /home/pavel/work/test/protected/views/contract/index.php (22)
 in /home/pavel/work/test/protected/controllers/ContractController.php (128)
 in /home/pavel/work/test/index.php (13)
+2015/06/02 16:54:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/site/loguot".' in /home/pavel/work/test/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/logu...')
+#1 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/pavel/work/test/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/loguot
+HTTP_REFERER=http://test.ru/admin/user/view/id/3
+---
+2015/06/02 16:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "loguot".' in /home/pavel/work/test/framework/web/CController.php:483
+Stack trace:
+#0 /home/pavel/work/test/framework/web/CController.php(270): CController->missingAction('loguot')
+#1 /home/pavel/work/test/framework/web/CWebApplication.php(282): CController->run('loguot')
+#2 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('site/loguot')
+#3 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/pavel/work/test/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/loguot
+HTTP_REFERER=http://test.ru/admin/user/view/id/3
+---
