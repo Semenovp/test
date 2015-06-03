@@ -93,7 +93,10 @@ class Contract extends CActiveRecord
 		$criteria->compare('progress',$this->progress);
 		$criteria->compare('services',$this->services);
 		$criteria->compare('price',$this->price);
-
+		$criteria->order = 'date DESC';
+		if (isset($_GET['start']) and isset( $_GET['end'])) {
+			$criteria->addBetweenCondition( 'price', $_GET['start'], $_GET['end'], 'and' );
+		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -69,8 +69,7 @@ class Client extends CActiveRecord
 		);
 	}
 
-	public function search()
-	{
+	public function search(){
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
@@ -83,7 +82,8 @@ class Client extends CActiveRecord
 		$criteria->compare('company',$this->company,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('hote',$this->hote);
-
+//		$criteria->condition = 'status != 7';
+		$criteria->order = 'date DESC';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 //			'pagination'=>array(
@@ -106,8 +106,12 @@ class Client extends CActiveRecord
 		return CHtml::listData($models,'id','name');
 	}
 	public function BeforeSave() {
-		if($this->IsNewRecord)
+		if($this->IsNewRecord) {
 			$this->date = time();
+		}
+		If($this->status == 6){
+			$this->status = 7;
+		}
 		return parent::BeforeSave();
 	}
 }

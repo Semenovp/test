@@ -129,7 +129,7 @@ class ClientController extends Controller
 
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-			'model'=>$model
+			'model'=>$model,
 		));
 	}
 

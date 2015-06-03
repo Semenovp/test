@@ -40,16 +40,16 @@
 							'class' => 'nav navbar-nav',
 						),
 							'items'=>array(
-								array('label'=>'Клиенты', 'url'=>array('/client/index')),
-								array('label'=>'Заявки', 'url'=>array('/contract/index',)),
+								array('label'=>'Заявки', 'url'=>array('/client/index')),
+								array('label'=>'Клиенты', 'url'=>array('/contract/index',)),
 								array(
 										'label' =>'Добавить','url'=> '#' ,
 									    'itemOptions'=> array('class' => 'dropdown'),
 									    'linkOptions' => array('data-target' => '#','class' => 'dropdown-toggle','data-toggle' => 'dropdown'),
 									    'submenuOptions' => array('class' => 'dropdown-menu',),
 										'items' => array(
-											array('label'=>'Клиента', 'url'=>array('/client/create',)),
-											array('label'=>'Заявку', 'url'=>array('/contract/create',)),
+											array('label'=>'Заявку', 'url'=>array('/client/create',)),
+											array('label'=>'Клиента', 'url'=>array('/contract/create',)),
 
 										)
 								)

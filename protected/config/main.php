@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'CRM Дом Сайтов',
 	'language' => 'ru',
-	'defaultController' => 'Contract',
+	'defaultController' => 'Client',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

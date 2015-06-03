@@ -49,6 +49,6 @@
 )); ?>
 </div>
 <?php
-	echo CHtml::link('Назад к заявкам', array('contract/index'),array('class' => 'btn btn-primary btn-raised'));
+	echo CHtml::link('Назад к клиентам', array('contract/index'),array('class' => 'btn btn-primary btn-raised'));
 ?>
 

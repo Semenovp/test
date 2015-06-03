@@ -16,7 +16,7 @@
 //);
 //?>
 
-<h1> Обновление клиента № <?php echo $model->id; ?></h1>
+<h1> Обновление заявки № <?php echo $model->id; ?></h1>
 	<div class="panel panel-primary panel-material-light-blue-600">
 
 <?php $this->renderPartial('_form_update', array('model'=>$model)); ?>

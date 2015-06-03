@@ -27,7 +27,7 @@
 	<div class="col-xs-3">
 		<fieldset class="form-group">
 			<?php echo $form->label($model,'status'); ?>
-			<?php echo $form->dropDownList($model,'status',ClientStatus::allStatus(),array('class' => 'form-control')); ?>
+			<?php echo $form->dropDownList($model,'status',ClientStatus::allStatus(),array('class' => 'form-control', 'empty' => '')); ?>
 		</fieldset>
 	</div>
 	<div class="col-xs-3">

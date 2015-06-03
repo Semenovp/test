@@ -28,7 +28,7 @@
 </div><!-- search-form -->
 <div class="panel panel-primary panel-material-light-blue-600">
 	<div class="panel-heading">
-		<h3 class="panel-title">Заявки</h3>
+		<h3 class="panel-title">Клиенты</h3>
 	</div>
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'client-grid',

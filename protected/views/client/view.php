@@ -17,7 +17,7 @@
 //?>
 <!---->
 <!--<h1>View Client #--><?php //echo $model->id; ?><!--</h1>-->
-<div class="alert alert-success" role="alert">Клиент успешно добавлен</div>
+<div class="alert alert-success" role="alert">Заяка успешно добавлена</div>
 <div class="panel panel-primary panel-material-light-blue-600">
 
 
@@ -44,5 +44,5 @@
 )); ?>
 </div>
 <?php
-	echo CHtml::link('Назад к клиентам', array('client/index'),array('class' => 'btn btn-primary btn-raised'));
+	echo CHtml::link('Назад к заявкам', array('client/index'),array('class' => 'btn btn-primary btn-raised'));
 ?>
