@@ -94,4 +94,18 @@ class Services extends CActiveRecord
 		$models = self::model()->findAll();
 		return CHtml::listData($models,'id','name');
 	}
+	public function findPKey($pk) {
+		$models = self::model()->findbyPk($pk);
+		return $models->name;
+	}
+	public static function getServices($data){
+		$args = explode(',', $data);
+		$str = '';
+		foreach($args as $itemServices){
+			$str[] = self::findPKey($itemServices);
+		}
+		$str = implode(',', $str);
+		return $str;
+	}
+
 }

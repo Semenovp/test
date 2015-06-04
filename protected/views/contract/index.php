@@ -57,7 +57,7 @@
 			),
 			array(
 				'name' => 'services',
-				'value' =>'$data->servicesId->name'
+				'value' =>'Services::getServices($data->services)'
 			),
 			array(
 				'name' => 'price',

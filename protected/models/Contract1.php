@@ -9,7 +9,7 @@
  * @property integer $date
  * @property integer $status
  * @property integer $progress
- * @property string $services
+ * @property integer $services
  * @property integer $price
  */
 class Contract extends CActiveRecord
@@ -30,8 +30,8 @@ class Contract extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('client_id,status, progress, services, price', 'required'),
-			array('client_id, date, status, progress, price', 'numerical', 'integerOnly'=>true),
+			array('client_id, status, progress, services, price', 'required'),
+			array('client_id, date, status, progress, services, price', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, client_id, date, status, progress, services, price', 'safe', 'on'=>'search'),
@@ -48,7 +48,7 @@ class Contract extends CActiveRecord
 		return array(
 			'clientId' => array(self::BELONGS_TO, 'Client', 'client_id'),
 			'statusId' => array(self::BELONGS_TO, 'ContractStatus', 'status'),
-			'servicesId' => array(self::HAS_MANY, 'Services', 'services')
+			'servicesId' => array(self::BELONGS_TO, 'Services', 'services')
 		);
 	}
 

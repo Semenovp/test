@@ -42,11 +42,13 @@
 		),
 		'services' => array(
 			'label' => 'Услуги',
-			'value' => $model->servicesId->name
+			'value' => Services::getServices($model->services)
 		),
 		'price',
 	),
-)); ?>
+));
+?>
+
 </div>
 <?php
 	echo CHtml::link('Назад к клиентам', array('contract/index'),array('class' => 'btn btn-primary btn-raised'));

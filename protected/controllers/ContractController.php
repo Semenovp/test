@@ -68,7 +68,12 @@ class ContractController extends Controller
 
 		if(isset($_POST['Contract']))
 		{
-			$model->attributes=$_POST['Contract'];
+//			$model->attributes=$_POST['Contract'];
+			$model->client_id = $_POST['Contract']['client_id'];
+			$model->status = $_POST['Contract']['status'];
+			$model->progress = $_POST['Contract']['progress'];
+			$model->services = implode(',',$_POST['Contract']['services']);
+			$model->price = $_POST['Contract']['price'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

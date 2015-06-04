@@ -1,9 +1,6 @@
 <?php
 /* @var $this ContractController */
 /* @var $model Contract */
-
-
-
 ?>
 	<div class="row add-form-wrapper">
 		<div class="col-xs-12">
