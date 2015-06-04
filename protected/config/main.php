@@ -10,7 +10,7 @@ return array(
 	'name'=>'CRM Дом Сайтов',
 	'language' => 'ru',
 	'defaultController' => 'Client',
-
+	'timeZone' => 'Europe/Moscow',
 	// preloading 'log' component
 	'preload'=>array('log'),
 

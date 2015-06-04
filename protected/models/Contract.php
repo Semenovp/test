@@ -80,6 +80,11 @@ class Contract extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
+	//Перевод даты в UnixTime
+	public static function getUnixTime($date){
+		$dateElements = explode("/", $date);
+		return mktime(0,0,0,$dateElements[1],$dateElements[2],$dateElements[0]);
+	}
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
@@ -94,8 +99,13 @@ class Contract extends CActiveRecord
 		$criteria->compare('services',$this->services);
 		$criteria->compare('price',$this->price);
 		$criteria->order = 'date DESC';
-		if (isset($_GET['start']) and isset( $_GET['end'])) {
-			$criteria->addBetweenCondition( 'price', $_GET['start'], $_GET['end'], 'and' );
+		if (isset($_GET['PriceStart']) and isset( $_GET['PriceEnd'])) {
+			$criteria->addBetweenCondition( 'price', $_GET['PriceStart'], $_GET['PriceEnd'], 'and' );//Фильтр по диапозону цен
+		}
+		if (isset($_GET['dateStart_submit'])  && strlen($_GET['dateStart_submit']) > 0) {
+			if (isset($_GET['dateEnd_submit'])  && strlen($_GET['dateEnd_submit']) > 0){
+				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), $this->getUnixTime($_GET['dateEnd_submit']), 'and' );//Фильтр по диапозону дат
+			}
 		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

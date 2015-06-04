@@ -20,12 +20,6 @@
 	</div>
 	<div class="col-xs-3">
 		<fieldset class="form-group">
-			<label for="">Дата добавления</label>
-			<?php echo $form->dateField($model,'date',array('class' => 'form-control empty')); ?>
-		</fieldset>
-	</div>
-	<div class="col-xs-3">
-		<fieldset class="form-group">
 			<?php echo $form->label($model,'status'); ?>
 			<?php echo $form->dropDownList($model,'status',ClientStatus::allStatus(),array('class' => 'form-control', 'empty' => '')); ?>
 		</fieldset>
@@ -46,6 +40,13 @@
 		<fieldset class="form-group">
 			<?php echo $form->label($model,'company'); ?>
 			<?php echo $form->textField($model,'company',array('class' => 'form-control empty')); ?>
+		</fieldset>
+	</div>
+	<div class="col-xs-3">
+		<fieldset class="form-group">
+			<label for="">Дата добавления</label>
+			<?php echo $form->dateField($model,'date',array('class' => 'form-control empty', 'name' => 'dateStart', 'placeholder' => 'от')); ?>
+			<?php echo $form->dateField($model,'date',array('class' => 'form-control empty', 'name' => 'dateEnd', 'placeholder' => 'до')); ?>
 		</fieldset>
 	</div>
 	<div class="col-xs-12 text-right">

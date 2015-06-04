@@ -20,12 +20,6 @@
 	</div>
 	<div class="col-xs-3">
 		<fieldset class="form-group">
-			<label for="">Дата добавления</label>
-			<?php echo $form->dateField($model,'date',array('class' => 'form-control empty')); ?>
-		</fieldset>
-	</div>
-	<div class="col-xs-3">
-		<fieldset class="form-group">
 			<?php echo $form->label($model,'status'); ?>
 			<?php echo $form->dropDownList($model,'status',ContractStatus::allStutus(), $htmlOptions = array('class' => 'form-control', 'empty' => '')); ?>
 		</fieldset>
@@ -34,26 +28,29 @@
 		<fieldset class="form-group">
 			<?php echo $form->labelEx($model,'progress'); ?>
 			<?php echo $form->dropDownList($model,'progress',array('1' =>'•', '2' => '••', '3' => '•••', '4' => '••••'),$htmlOptions = array('class' => 'form-control', 'empty' => '')); ?>
-
+		</fieldset>
+	</div>
+	<div class="col-xs-3">
+		<fieldset class="form-group">
+			<label for="">Цена</label>
+			<?php echo $form->numberField($model,'price', $htmlOptions = array('class' => 'form-control', 'name' => 'PriceStart', 'placeholder' => 'от')); ?>
+			<?php echo $form->numberField($model,'price', $htmlOptions = array('class' => 'form-control', 'name' => 'PriceEnd', 'placeholder' => 'до')); ?>
+		</fieldset>
+	</div>
+	<div class="col-xs-3">
+		<fieldset class="form-group">
+			<fieldset class="form-group">
+				<label for="">Дата добавления</label>
+				<?php echo $form->dateField($model,'date',array('class' => 'form-control empty', 'name' => 'dateStart', 'placeholder' => 'от')); ?>
+				<?php echo $form->dateField($model,'date',array('class' => 'form-control empty', 'name' => 'dateEnd', 'placeholder' => 'до')); ?>
+			</fieldset>
 		</fieldset>
 	</div>
 	<div class="col-xs-3">
 		<fieldset class="form-group">
 			<?php echo $form->labelEx($model,'services'); ?>
 			<?php echo $form->dropDownList($model,'services',Services::allServices(), $htmlOptions = array('class' => 'form-control', 'empty' => '')); ?>
-
 		</fieldset>
-	</div>
-
-	<div class="col-xs-3">
-		<fieldset class="form-group">
-			<label for="">Цена</label>
-			<?php echo $form->numberField($model,'price', $htmlOptions = array('class' => 'form-control', 'name' => 'start', 'placeholder' => 'от')); ?>
-			<?php echo $form->numberField($model,'price', $htmlOptions = array('class' => 'form-control', 'name' => 'end', 'placeholder' => 'до')); ?>
-		</fieldset>
-	</div>
-	<div class="col-xs-3">
-
 	</div>
 	<div class="col-xs-12 text-right">
 		<?php echo CHtml::submitButton('Показать',array('class' => 'btn btn-primary btn-raised')); ?>

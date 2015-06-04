@@ -17,7 +17,8 @@
 <?php //$this->widget('zii.widgets.CListView', array(
 //	'dataProvider'=>$dataProvider,
 //	'itemView'=>'_view',
-//)); ?>
+//));
+?>
 <div class="panel panel-primary panel-material-light-blue-600">
 	<div class="panel-heading">
 		<h3 class="panel-title">Фильтр</h3>

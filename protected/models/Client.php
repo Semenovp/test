@@ -68,7 +68,11 @@ class Client extends CActiveRecord
 			'hote' => 'Заметка',
 		);
 	}
-
+	//Перевод даты в UnixTime
+	public static function getUnixTime($date){
+			$dateElements = explode("/", $date);
+			return mktime(0,0,0,$dateElements[1],$dateElements[2],$dateElements[0]);
+	}
 	public function search(){
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
@@ -84,6 +88,11 @@ class Client extends CActiveRecord
 		$criteria->compare('hote',$this->hote);
 //		$criteria->condition = 'status != 7';
 		$criteria->order = 'date DESC';
+		if (isset($_GET['dateStart_submit'])  && strlen($_GET['dateStart_submit']) > 0) {
+			if (isset($_GET['dateEnd_submit'])  && strlen($_GET['dateEnd_submit']) > 0){
+				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), $this->getUnixTime($_GET['dateEnd_submit']), 'and' );//Фильтр по диапозону дат
+			}
+		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 //			'pagination'=>array(
