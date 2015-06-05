@@ -3964,3 +3964,34 @@ Stack trace:
 REQUEST_URI=/client/create
 in /home/pavel/work/test/protected/controllers/ClientController.php (73)
 in /home/pavel/work/test/index.php (13)
+2015/06/05 11:08:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /home/pavel/work/test/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/pavel/work/test/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2015/06/05 11:12:07 [error] [php] Undefined index: Contract (/home/pavel/work/test/protected/models/Client.php:94)
+Stack trace:
+#0 /home/pavel/work/test/framework/web/CBaseController.php(95): ClientController->renderInternal()
+#1 /home/pavel/work/test/framework/web/CController.php(869): ClientController->renderFile()
+#2 /home/pavel/work/test/framework/web/CController.php(782): ClientController->renderPartial()
+#3 /home/pavel/work/test/protected/controllers/ClientController.php(140): ClientController->render()
+#4 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): ClientController->actionIndex()
+#5 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): ClientController->runAction()
+#7 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /home/pavel/work/test/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): ClientController->filterAccessControl()
+#10 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#12 /home/pavel/work/test/framework/web/CController.php(265): ClientController->runActionWithFilters()
+#13 /home/pavel/work/test/framework/web/CWebApplication.php(282): ClientController->run()
+#14 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/pavel/work/test/index.php(13): CWebApplication->run()
+REQUEST_URI=/client/index?Client%5Bname%5D=&Client%5Bstatus%5D=&Client%5Bphone%5D=&Client%5Bemail%5D=&Client%5Bcompany%5D=&Client%5Bservices%5D%5B%5D=1&Client%5Bservices%5D%5B%5D=2&selectItemClient%5Bservices%5D%5B%5D=1&selectItemClient%5Bservices%5D%5B%5D=2&dateStart=&dateStart_submit=&dateEnd=&dateEnd_submit=&yt0=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C
+in /home/pavel/work/test/protected/models/Client.php (94)
+in /home/pavel/work/test/protected/views/client/index.php (48)
+in /home/pavel/work/test/protected/controllers/ClientController.php (140)

@@ -88,8 +88,13 @@ class Client extends CActiveRecord
 		$criteria->compare('company',$this->company,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('hote',$this->hote);
-//		$criteria->condition = 'status != 7';
 		$criteria->order = 'date DESC';
+		if (isset($_GET['Client']['services'])) {
+			$criteria->compare( 'services', implode(',',$_GET['Client']['services']) );
+		}
+		if (!$_GET){
+			$criteria->condition = 'status != 7';
+		}
 		if (isset($_GET['dateStart_submit'])  && strlen($_GET['dateStart_submit']) > 0) {
 			if (isset($_GET['dateEnd_submit'])  && strlen($_GET['dateEnd_submit']) > 0){
 				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), $this->getUnixTime($_GET['dateEnd_submit']), 'and' );//Фильтр по диапозону дат

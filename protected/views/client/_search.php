@@ -44,6 +44,12 @@
 	</div>
 	<div class="col-xs-3">
 		<fieldset class="form-group">
+			<?php echo $form->labelEx($model,'services'); ?>
+			<?php echo $form->dropDownList($model,'services',Services::allServices(), $htmlOptions = array('class' => 'form-control',  'multiple' => 'multiple')); ?>
+		</fieldset>
+	</div>
+	<div class="col-xs-3">
+		<fieldset class="form-group">
 			<label for="">Дата добавления</label>
 			<?php echo $form->dateField($model,'date',array('class' => 'form-control empty', 'name' => 'dateStart', 'placeholder' => 'от')); ?>
 			<?php echo $form->dateField($model,'date',array('class' => 'form-control empty', 'name' => 'dateEnd', 'placeholder' => 'до')); ?>
