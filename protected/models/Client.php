@@ -11,6 +11,7 @@
  * @property string $email
  * @property string $company
  * @property integer $status
+ * @property string $services
  * @property string $hote
  */
 class Client extends CActiveRecord
@@ -33,10 +34,10 @@ class Client extends CActiveRecord
 		return array(
 			array('name, phone, email, company, status', 'required'),
 			array('date, phone, status', 'numerical', 'integerOnly'=>true),
-			array('hote', 'safe'),
+			array('hote, services', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, date, phone, email, company, status, hote', 'safe', 'on'=>'search'),
+			array('id, name, date, phone, email, company, status, hote, services', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +67,7 @@ class Client extends CActiveRecord
 			'company' => 'Компания',
 			'status' => 'Статус',
 			'hote' => 'Заметка',
+			'services' => 'Услуги'
 		);
 	}
 	//Перевод даты в UnixTime

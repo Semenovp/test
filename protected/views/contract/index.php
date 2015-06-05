@@ -18,6 +18,7 @@
 //	'dataProvider'=>$dataProvider,
 //	'itemView'=>'_view',
 //));
+
 ?>
 <div class="panel panel-primary panel-material-light-blue-600">
 	<div class="panel-heading">
@@ -57,7 +58,7 @@
 			),
 			array(
 				'name' => 'services',
-				'value' =>'Services::getServices($data->services)'
+				'value' =>'Services::getServices($data->services)',
 			),
 			array(
 				'name' => 'price',

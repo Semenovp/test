@@ -39,6 +39,10 @@
 			'label' => 'Статус',
 			'value' => $model->StatusName->name
 		),
+		'services' => array(
+			'label' => 'Услуги',
+			'value' => Services::getServices($model->services)
+		),
 		'hote',
 	),
 )); ?>

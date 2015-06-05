@@ -96,9 +96,10 @@ class Contract extends CActiveRecord
 		$criteria->compare('date',$this->date);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('progress',$this->progress);
-		$criteria->compare('services',$this->services);
 		$criteria->compare('price',$this->price);
-		$criteria->order = 'date DESC';
+		if (isset($_GET['Contract']['services'])) {
+			$criteria->compare( 'services', implode(',',$_GET['Contract']['services']) );
+		}
 		if (isset($_GET['PriceStart']) and isset( $_GET['PriceEnd'])) {
 			$criteria->addBetweenCondition( 'price', $_GET['PriceStart'], $_GET['PriceEnd'], 'and' );//Фильтр по диапозону цен
 		}
@@ -107,6 +108,7 @@ class Contract extends CActiveRecord
 				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), $this->getUnixTime($_GET['dateEnd_submit']), 'and' );//Фильтр по диапозону дат
 			}
 		}
+		$criteria->order = 'date DESC';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

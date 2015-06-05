@@ -24,6 +24,7 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
 ?>
 
 <?php //$this->widget('zii.widgets.CListView', array(
@@ -61,6 +62,10 @@ $('.search-form form').submit(function(){
 		array(
 			'name' => 'status',
 			'value' => '$data->StatusName->name'
+		),
+		array(
+			'name' => 'services',
+			'value' =>'Services::getServices($data->services)',
 		),
 		'hote',
 		array(

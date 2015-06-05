@@ -104,7 +104,7 @@ class Services extends CActiveRecord
 		foreach($args as $itemServices){
 			$str[] = self::findPKey($itemServices);
 		}
-		$str = implode(',', $str);
+		$str = implode(', ', $str);
 		return $str;
 	}
 

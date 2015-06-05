@@ -78,7 +78,13 @@
 		<?php echo $form->error($model,'status'); ?>
 		</fieldset>
 	</div>
-
+	<div class="col-xs-3">
+		<fieldset class="form-group">
+			<?php echo $form->labelEx($model,'services'); ?>
+			<?php echo $form->dropDownList($model,'services',Services::allServices(), $htmlOptions = array('class' => 'form-control', 'multiple' => 'multiple')); ?>
+			<?php echo $form->error($model,'services'); ?>
+		</fieldset>
+	</div>
 	<div class="col-xs-3">
 		<fieldset class="form-group">
 		<?php echo $form->labelEx($model,'hote'); ?>
