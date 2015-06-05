@@ -128,6 +128,18 @@ class Client extends CActiveRecord
 		If($this->status == 6){
 			$this->status = 7;
 		}
+		//При статусе "Договор" заявка становится клиентом
+		if ($this->status == 5){
+			$tableContract = new Contract();
+			$tableContract->client_id = $this->id;
+			$tableContract->status = 1;
+			$tableContract->progress = 1;
+			$tableContract->services = $this->services;
+			$tableContract->price = 0;
+			$tableContract->save();
+			$this->status = 7;
+		}
 		return parent::BeforeSave();
 	}
+
 }

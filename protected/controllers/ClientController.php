@@ -99,7 +99,14 @@ class ClientController extends Controller
 
 		if(isset($_POST['Client']))
 		{
-			$model->attributes=$_POST['Client'];
+//			$model->attributes=$_POST['Client'];
+			$model->name = $_POST['Client']['name'];
+			$model->phone = $_POST['Client']['phone'];
+			$model->email = $_POST['Client']['email'];
+			$model->company = $_POST['Client']['company'];
+			$model->status = $_POST['Client']['status'];
+			$model->services = implode(',',$_POST['Client']['services']);
+			$model->hote = $_POST['Client']['hote'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
