@@ -51,6 +51,22 @@ return array(
 			),
 			'showScriptName' => false,
 		),
+		'widgetFactory' => array(
+			'widgets' => array(
+				'CLinkPager' => array(
+					'header' => '',
+					'nextPageLabel'=>'Следующая <i class="fa fa-long-arrow-right"></i>',
+					'prevPageLabel'=>'<i class="fa fa-long-arrow-left"></i> Предыдущая',
+					'lastPageLabel'=>'Последняя',
+					'firstPageLabel'=>'Первая',
+					'selectedPageCssClass' => 'active',
+					'hiddenPageCssClass' => 'disabled',
+					'htmlOptions' => array(
+						'class' => 'pagination',
+					),
+				),
+			),
+		),
 
 
 		// database settings are configured in database.php

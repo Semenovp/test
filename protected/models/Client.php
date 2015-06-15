@@ -147,9 +147,9 @@ class Client extends CActiveRecord
 		);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'sort' => $sort
-//			'pagination'=>array(
-//                                'pageSize'=>'5'),
+			'sort' => $sort,
+			'pagination'=>  array('pageSize'=>'10'),
+
 		));
 	}
 

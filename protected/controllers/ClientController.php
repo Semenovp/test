@@ -135,6 +135,7 @@ class ClientController extends Controller
 	 */
 	public function actionIndex()
 	{
+
 		$dataProvider=new CActiveDataProvider('Client');
 		$model=new Client('search');
 		$model->unsetAttributes();  // clear any default values

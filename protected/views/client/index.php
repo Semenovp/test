@@ -48,6 +48,7 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'itemsCssClass' => 'table table-striped table-hover',
 	'rowCssClass' => array('active', 'active'),
+	'pagerCssClass'=>'custom-pager',
 	'columns'=>array(
 		array(
 			'name' => 'name'
@@ -75,4 +76,5 @@ $('.search-form form').submit(function(){
 	),
 )); ?>
 </div>
+
 

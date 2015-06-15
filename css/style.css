@@ -62,3 +62,6 @@ i {
   position: relative;
   top:200px;
 }
+.custom-pager{
+  position: absolute;
+}

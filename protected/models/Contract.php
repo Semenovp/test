@@ -144,7 +144,8 @@ class Contract extends CActiveRecord
 //		$criteria->order = 'date DESC';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'sort' => $sort
+			'sort' => $sort,
+			'pagination'=>  array('pageSize'=>'10'),
 		));
 	}
 

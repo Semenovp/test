@@ -37,6 +37,7 @@
 		'dataProvider'=>$model->search(),
 		'itemsCssClass' => 'table table-striped table-hover',
 		'rowCssClass' => array('active', 'active'),
+		'pagerCssClass'=>'custom-pager',
 		'columns'=>array(
 			array(
 				'name' => 'client_id',
