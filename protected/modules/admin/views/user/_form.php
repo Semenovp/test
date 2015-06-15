@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="panel-body">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
@@ -14,27 +14,34 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textArea($model,'username',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'username'); ?>
+	<div class="col-xs-3">
+		<fieldset class="form-group">
+			<div class="form-control-wrapper">
+				<?php echo $form->textField($model,'username',array('class' => 'form-control empty')); ?>
+				<div class="floating-label">
+					Логин
+				</div>
+				<span class="material-input"></span>
+				<?php echo $form->error($model,'username'); ?>
+			</div>
+		</fieldset>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->textArea($model,'password',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'password'); ?>
+	<div class="col-xs-3">
+		<fieldset class="form-group">
+			<div class="form-control-wrapper">
+				<?php echo $form->textField($model,'password',array('class' => 'form-control empty')); ?>
+				<div class="floating-label">
+					Пароль
+				</div>
+				<span class="material-input"></span>
+				<?php echo $form->error($model,'password'); ?>
+			</div>
+		</fieldset>
 	</div>
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить', array('class' => 'btn btn-primary btn-raised')); ?>
 	</div>
-
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
