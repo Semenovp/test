@@ -88,7 +88,7 @@ class Client extends CActiveRecord
 		$criteria->compare('company',$this->company,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('hote',$this->hote);
-		$criteria->order = 'date DESC';
+//		$criteria->order = 'date DESC';
 		if (isset($_GET['Client']['services'])) {
 			$criteria->compare( 'services', implode(',',$_GET['Client']['services']) );
 		}
@@ -99,9 +99,55 @@ class Client extends CActiveRecord
 			if (isset($_GET['dateEnd_submit'])  && strlen($_GET['dateEnd_submit']) > 0){
 				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), $this->getUnixTime($_GET['dateEnd_submit']), 'and' );//Фильтр по диапозону дат
 			}
+			else {
+				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), time(), 'and' );//Если конечного значения нет то ищем до текущей даты
+			}
 		}
+		$sort = new CSort();
+		$sort->attributes = array(
+			'defaultOrder'=>array(
+				'date'=>true
+			),
+			'id'=>array(
+				'asc'=>'id',
+				'desc'=>'id DESC',
+			),
+			'name'=>array(
+				'asc'=>'name',
+				'desc'=>'name DESC',
+			),
+			'date'=>array(
+				'asc'=>'date',
+				'desc'=>'date desc',
+			),
+			'phone'=>array(
+				'asc'=>'phone',
+				'desc'=>'phone desc',
+			),
+			'email'=>array(
+				'asc'=>'email',
+				'desc'=>'email desc',
+			),
+			'company'=>array(
+				'asc'=>'company',
+				'desc'=>'company desc',
+			),
+			'status'=>array(
+				'asc'=>'status',
+				'desc'=>'status desc',
+			),
+			'hote'=>array(
+				'asc'=>'hote',
+				'desc'=>'hote desc',
+			),
+			'services'=>array(
+				'asc'=>'services',
+				'desc'=>'services desc',
+			),
+		);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort' => $sort
 //			'pagination'=>array(
 //                                'pageSize'=>'5'),
 		));
@@ -122,9 +168,7 @@ class Client extends CActiveRecord
 		return CHtml::listData($models,'id','name');
 	}
 	public function BeforeSave() {
-		if($this->IsNewRecord) {
-			$this->date = time();
-		}
+		$this->date = time();
 		If($this->status == 6){
 			$this->status = 7;
 		}

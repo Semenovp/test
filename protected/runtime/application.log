@@ -4054,3 +4054,38 @@ Stack trace:
 REQUEST_URI=/client/update/7
 in /home/pavel/work/test/protected/controllers/ClientController.php (108)
 in /home/pavel/work/test/index.php (13)
+2015/06/15 10:47:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /home/pavel/work/test/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/pavel/work/test/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2015/06/15 16:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /home/pavel/work/test/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/pavel/work/test/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2015/06/15 16:36:50 [error] [php] include(Article.php): failed to open stream: No such file or directory (/home/pavel/work/test/framework/YiiBase.php:432)
+Stack trace:
+#0 /home/pavel/work/test/protected/controllers/ClientController.php(139): spl_autoload_call()
+#1 /home/pavel/work/test/framework/web/actions/CInlineAction.php(49): ClientController->actionIndex()
+#2 /home/pavel/work/test/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /home/pavel/work/test/framework/web/filters/CFilterChain.php(133): ClientController->runAction()
+#4 /home/pavel/work/test/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/pavel/work/test/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /home/pavel/work/test/framework/web/filters/CInlineFilter.php(58): ClientController->filterAccessControl()
+#7 /home/pavel/work/test/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /home/pavel/work/test/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/pavel/work/test/framework/web/CController.php(265): ClientController->runActionWithFilters()
+#10 /home/pavel/work/test/framework/web/CWebApplication.php(282): ClientController->run()
+#11 /home/pavel/work/test/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /home/pavel/work/test/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/pavel/work/test/index.php(13): CWebApplication->run()
+REQUEST_URI=/client/index
+in /home/pavel/work/test/protected/controllers/ClientController.php (139)
+in /home/pavel/work/test/index.php (13)

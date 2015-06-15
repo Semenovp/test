@@ -107,10 +107,44 @@ class Contract extends CActiveRecord
 			if (isset($_GET['dateEnd_submit'])  && strlen($_GET['dateEnd_submit']) > 0){
 				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), $this->getUnixTime($_GET['dateEnd_submit']), 'and' );//Фильтр по диапозону дат
 			}
+			else {
+				$criteria->addBetweenCondition( 'date', $this->getUnixTime($_GET['dateStart_submit']), time(), 'and' );//Если конечного значения нет то ищем до текущей даты
+			}
 		}
-		$criteria->order = 'date DESC';
+		$sort = new CSort();
+		$sort->attributes = array(
+			'defaultOrder'=>array(
+				'date'=>true
+			),
+			'client_id'=>array(
+				'asc'=>'client_id',
+				'desc'=>'client_id DESC',
+			),
+			'date'=>array(
+				'asc'=>'date',
+				'desc'=>'date desc',
+			),
+			'progress'=>array(
+				'asc'=>'progress',
+				'desc'=>'progress desc',
+			),
+			'price'=>array(
+				'asc'=>'price',
+				'desc'=>'price desc',
+			),
+			'services'=>array(
+				'asc'=>'services',
+				'desc'=>'services desc',
+			),
+			'status'=>array(
+				'asc'=>'status',
+				'desc'=>'status desc',
+			),
+		);
+//		$criteria->order = 'date DESC';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort' => $sort
 		));
 	}
 
@@ -125,8 +159,7 @@ class Contract extends CActiveRecord
 		return parent::model($className);
 	}
 	public function BeforeSave() {
-		if($this->IsNewRecord)
-			$this->date = time();
+		$this->date = time();
 		return parent::BeforeSave();
 	}
 	public static function progress($prog){//
